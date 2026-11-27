@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: real-windy-city-mcp
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: MCP_KEY
+        sync: false
+      - key: GITHUB_TOKEN
+        sync: false
